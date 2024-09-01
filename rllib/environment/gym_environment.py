@@ -90,7 +90,7 @@ class GymEnvironment(AbstractEnvironment):
 
     def step(self, action):
         """See `AbstractEnvironment.step'."""
-        next_state, reward, done, _, info = self.env.step(action)
+        next_state, reward, done, info = self.env.step(action)
         if self.num_states > 0 and done:  # Move to terminal state.
             next_state = self.num_states - 1
         self._time += 1
